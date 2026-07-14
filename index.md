@@ -335,14 +335,43 @@ You *can* stack intervals — e.g., Perfect 5th + Minor 3rd = 1-5-♭7.
 The **Chord Stack System** organizes all chords and available tensions into five categories, by increasing complexity, corresponding to gospel-music styles:
 
 1. **Traditional / Hymn** — Major triads, Minor triads, Augmented triads, Minor 6th chords, Dominant 7th chords (no tensions)
-2. **Worship, CCM / Blues** — Major triad (add2), Minor triad (add2)
-3. **Churchy / Soul** — Minor 7th, Dominant ♭9, 9 & ♯9 chords, diminished chords, diatonic chords
+2. **Worship / CCM ** — Major triad (add2), Minor triad (add2)
+3. **Churchy / Blues & Soul** — Minor 7th, Dominant ♭9, 9 & ♯9 chords, diminished chords, diatonic chords
 4. **Early Contemporary / RnB** — Major7 (9,13), Minor7 (9,11), Dom7sus4 (9,13)
 5. **Late Contemporary / Jazz** — All chords with all tension possibilities (see Adding Tensions worksheet)
 
 **Note:** each category *includes* the chords from all prior categories (e.g., Churchy includes Traditional + Worship/CCM + Churchy).
 
 **Chord Stack Combos (CSCs):** You can combine categories within a single song — e.g., play Churchy stacks, insert a chord from Modern Contemporary, then return to Churchy. This is how new progressions, approaches, and reharmonizations are created.
+
+---
+
+Yes, this is entirely legit. It reads perfectly as a roadmap for harmonic complexity, very similar to the frameworks used in professional contemporary keyboard pedagogy (like Berklee's gospel and R&B curricula).
+
+Rather than strict historical boundaries, this list represents the **evolution of tension and color** in modern playing. Here is a breakdown of why this categorization is so accurate:
+
+## The Harmonic Progression
+
+**1. Traditional / Hymn**
+This is the foundation of four-part SATB (Soprano, Alto, Tenor, Bass) harmony. Hymnals rely almost exclusively on primary triads. When a dominant 7th is used, it is usually a pure V7 with no alterations, serving a strict, predictable function to resolve to the tonic.
+
+**2. Worship / CCM **
+The `add2` (often conceptualized as an `add9`) is the absolute hallmark of Contemporary Christian Music (think Hillsong or Elevation). It provides a wide, anthemic sound that adds color and emotion *without* introducing the functional pull or jazz-like tension of a 7th.
+
+**3. Churchy / Blues & Soul**
+This is where traditional Black gospel and classic soul live. The framework shifts to heavy tension and release. Diminished chords become primary vehicles for passing chords, and the altered dominants (particularly the ♭9 and ♯9) create the gritty, blues-infused "preacher chords" and classic turnaround movements.
+
+**4. Early Contemporary / RnB**
+This captures the 90s/early 2000s shift (e.g., Kirk Franklin, early Fred Hammond, classic R&B). The harmony gets lush and floating. You see the widespread use of Maj9 and Min11 chords. The `Dom7sus4` (often voiced simply as a slash chord, like F/G) becomes a staple, providing a dominant function that feels smooth and suspended rather than harsh.
+
+**5. Late Contemporary / Jazz**
+This is the modern gospel, neo-soul, and jazz fusion space (e.g., Robert Glasper, modern worship). At this level, basic triads are practically obsolete. Every chord is an opportunity for upper-structure extensions, full alterations (♭9, ♯9, ♭5, ♯5), and rootless voicings.
+
+## The Functional Shift
+
+The brilliance of this list is that it forces a shift in how you think about the keyboard. Moving from Level 1 to Level 5 requires transitioning from thinking about "shapes" to thinking **functionally**. By the time you are drilling Level 5 voicings—like locking in a rootless Dom 9 and taking it across all 12 keys—you aren't just playing notes; you are managing voice leading, inner voice movement, and tension resolution.
+
+-- Gemini 3.1 Pro
 
 ---
 
