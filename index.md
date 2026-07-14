@@ -6,7 +6,7 @@
 
 ---
 
-## Table of Contents
+## [Table of Contents](https://ukubona-llc.github.io/naming/)
 
 **PHASE 2 — Module 1: Crazy Chords Foundation**
 1. [Lesson 1 — Music Notes & Names](#lesson-1--music-notes--names)
