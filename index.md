@@ -334,11 +334,11 @@ You *can* stack intervals — e.g., Perfect 5th + Minor 3rd = 1-5-♭7.
 
 The **Chord Stack System** organizes all chords and available tensions into five categories, by increasing complexity, corresponding to gospel-music styles:
 
-1. **Traditional** — Major triads, Minor triads, Augmented triads, Minor 6th chords, Dominant 7th chords (no tensions)
-2. **Worship / CCM** — Major triad (add2), Minor triad (add2)
-3. **Churchy** — Minor 7th, Dominant ♭9, 9 & ♯9 chords, diminished chords, diatonic chords
-4. **Early Contemporary** — Major7 (9,13), Minor7 (9,11), Dom7sus4 (9,13)
-5. **Late Contemporary** — All chords with all tension possibilities (see Adding Tensions worksheet)
+1. **Traditional / Hymn** — Major triads, Minor triads, Augmented triads, Minor 6th chords, Dominant 7th chords (no tensions)
+2. **Worship, CCM / Blues** — Major triad (add2), Minor triad (add2)
+3. **Churchy / Soul** — Minor 7th, Dominant ♭9, 9 & ♯9 chords, diminished chords, diatonic chords
+4. **Early Contemporary / RnB** — Major7 (9,13), Minor7 (9,11), Dom7sus4 (9,13)
+5. **Late Contemporary / Jazz** — All chords with all tension possibilities (see Adding Tensions worksheet)
 
 **Note:** each category *includes* the chords from all prior categories (e.g., Churchy includes Traditional + Worship/CCM + Churchy).
 
