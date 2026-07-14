@@ -1,176 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Create Crazy Gospel Chords</title>
+<title>Crazy Gospel Chords · Ukubona</title>
+<link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-dark.ico" id="favicon-dark"/>
+<link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-light.ico" media="(prefers-color-scheme:light)" id="favicon-light"/>
+<link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-dark.png" as="image"/>
+<link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-light.png" as="image"/>
 <style>
-    :root {
-        --primary: #0f172a;
-        --secondary: #2563eb;
-        --bg: #f8fafc;
-        --surface: #ffffff;
-        --text: #334155;
-        --border: #e2e8f0;
-    }
-    body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background-color: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        padding: 40px 20px;
-        margin: 0;
-    }
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        background: var(--surface);
-        padding: 50px 60px;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-    h1, h2, h3, h4 { color: var(--primary); margin-top: 1.5em; margin-bottom: 0.5em; }
-    h1 { font-size: 2.5em; margin-top: 0; border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
-    h2 { font-size: 1.8em; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-    h3 { font-size: 1.3em; color: var(--secondary); }
-    a { color: var(--secondary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    blockquote {
-        border-left: 4px solid var(--secondary);
-        background-color: #eff6ff;
-        margin: 1.5em 0;
-        padding: 16px 20px;
-        color: #1e3a8a;
-        font-style: italic;
-        border-radius: 0 8px 8px 0;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.5em 0;
-    }
-    th, td {
-        border: 1px solid var(--border);
-        padding: 12px 16px;
-        text-align: left;
-    }
-    th { background-color: #f1f5f9; font-weight: 600; color: var(--primary); }
-    tr:nth-child(even) { background-color: #f8fafc; }
-    code {
-        background-color: #f1f5f9;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.9em;
-        color: #b91c1c;
-    }
-    pre {
-        background-color: #1e293b;
-        color: #f8fafc;
-        padding: 16px;
-        border-radius: 8px;
-        overflow-x: auto;
-        line-height: 1.5;
-    }
-    pre code {
-        background-color: transparent;
-        color: inherit;
-        padding: 0;
-    }
-    hr { border: 0; height: 1px; background: var(--border); margin: 40px 0; }
-    .gemini-insert {
-        background-color: #fdfaf3;
-        border-left: 4px solid #f59e0b;
-        padding: 20px;
-        margin: 30px 0;
-        border-radius: 0 8px 8px 0;
-    }
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#08080D; --surface:#0F0F18; --surface2:#16161F; --border:#1E1E2E;
+  --amber:#F59E0B; --amber-dim:#92610A; --amber-glow:#F59E0B14;
+  --text:#E8E8F0; --muted:#7070A0; --faint:#2A2A3A;
+  --violet:#A78BFA; --violet-dim:#6D28D9; --violet-glow:#A78BFA10;
+  --teal:#2DD4BF; --teal-dim:#0F766E; --teal-glow:#2DD4BF12;
+  --green:#4ADE80; --blue:#60A5FA; --rose:#FB7185; --rose-dim:#BE123C; --rose-glow:#FB718514;
+  --serif:'DM Serif Display', Georgia, serif; --sans:'DM Sans', system-ui, sans-serif; --mono:'DM Mono','Fira Mono',monospace;
+  --radius:4px; --content-width:1040px; --edge:clamp(1.5rem, 6vw, 4rem);
+}
+[data-theme="light"]{
+  --bg:#F2F0EA; --surface:#FFFFFF; --surface2:#EDEAE2; --border:rgba(0,0,0,0.09);
+  --amber:#92610A; --amber-dim:#7A5208; --amber-glow:#92610A14;
+  --text:#18160F; --muted:#6B6555; --faint:#D9D4C8;
+  --violet:#6D28D9; --violet-dim:#5B21B6; --violet-glow:#6D28D910;
+  --teal:#0F766E; --teal-dim:#0D5C56; --teal-glow:#0F766E12;
+  --green:#15803D; --blue:#1D4ED8; --rose:#BE123C; --rose-dim:#9F1239; --rose-glow:#BE123C14;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.65;min-height:100vh;overflow-x:hidden;transition:background .35s,color .35s;}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--edge);height:52px;display:flex;align-items:center;gap:.85rem;}
+.logo-wrap{width:26px;height:26px;flex-shrink:0;position:relative;}
+.logo-wrap img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;transition:opacity .4s;animation:spin 90s linear infinite;}
+@media (prefers-reduced-motion: reduce){.logo-wrap img{animation:none;}}
+@keyframes spin{to{transform:rotate(360deg);}}
+.logo-dark{opacity:1;} .logo-light{opacity:0;}
+[data-theme="light"] .logo-dark{opacity:0;} [data-theme="light"] .logo-light{opacity:1;}
+.nav-brand{font-family:var(--serif);font-size:.95rem;color:var(--text);flex:1;white-space:nowrap;}
+.nav-sub{font-family:var(--mono);font-size:.55rem;color:var(--muted);letter-spacing:.08em;margin-left:.4rem;}
+.nav-links{display:flex;gap:1.2rem;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--amber);}
+@media (max-width:760px){.nav-links{display:none;}}
+.theme-btn{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:.26rem .8rem;font-family:var(--mono);font-size:.58rem;color:var(--muted);cursor:pointer;letter-spacing:.06em;transition:background .2s,color .2s;flex-shrink:0;}
+.theme-btn:hover{color:var(--text);}
+
+/* Progress rail */
+.rail{position:sticky;top:52px;z-index:290;height:2px;background:var(--border);}
+.rail-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--amber),var(--violet));transition:width .1s linear;}
+
+/* Shell */
+.shell{max-width:var(--content-width);margin:0 auto;padding:0 var(--edge);}
+
+.hero{padding:3.5rem 0 2.2rem;border-bottom:1px solid var(--border);}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;}
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);line-height:1.08;font-weight:400;margin-bottom:.9rem;}
+h1 em{font-style:italic;color:var(--amber);}
+.hero-meta{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.03em;}
+.hero-meta a{color:var(--violet);text-decoration:none;border-bottom:1px dotted var(--violet-dim);}
+.hero-meta a:hover{color:var(--amber);border-color:var(--amber-dim);}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem;margin:2.2rem 0;}
+.toc-head{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.toc-phase{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:1rem 0 .5rem;}
+.toc-phase:first-child{margin-top:0;}
+.toc ol{list-style:none;counter-reset:item;}
+.toc li{counter-increment:item;font-size:.85rem;padding:.28rem 0;color:var(--text);display:flex;gap:.6rem;}
+.toc li::before{content:counter(item);font-family:var(--mono);font-size:.7rem;color:var(--violet);min-width:1.4rem;}
+.toc a{color:var(--text);text-decoration:none;}
+.toc a:hover{color:var(--amber);}
+.toc-note{margin-top:1.2rem;padding-top:1.1rem;border-top:1px dashed var(--border);font-size:.8rem;color:var(--muted);line-height:1.6;}
+.toc-note code{background:var(--surface2);}
+
+/* Section rhythm */
+.sl{display:flex;align-items:center;gap:.75rem;padding:2.6rem 0 1.3rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+.sl::after{content:'';flex:1;height:1px;background:var(--border);}
+.sl .tag{color:var(--amber);}
+.phase-marker{font-family:var(--serif);font-style:italic;font-size:1.9rem;color:var(--violet);padding:2.4rem 0 .2rem;border-top:1px solid var(--border);margin-top:3rem;}
+.phase-marker:first-of-type{border-top:none;margin-top:0;}
+.phase-marker small{display:block;font-family:var(--mono);font-style:normal;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+
+h2.lesson-h{font-family:var(--serif);font-weight:400;font-size:1.55rem;color:var(--text);margin:2.4rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+h3.sub-h{font-family:var(--sans);font-weight:700;font-size:.98rem;color:var(--amber);margin:1.4rem 0 .6rem;letter-spacing:.01em;}
+
+p.body-text{font-size:.94rem;color:var(--text);font-weight:300;line-height:1.8;margin-bottom:1.1rem;}
+p.body-text strong{font-weight:500;color:var(--text);}
+.lede{font-size:1.02rem;color:var(--muted);font-weight:300;margin-bottom:1.4rem;}
+
+ul.plain,ol.plain{margin:0 0 1.2rem 1.3rem;}
+ul.plain li,ol.plain li{font-size:.9rem;color:var(--text);font-weight:300;line-height:1.8;padding-left:.3rem;margin-bottom:.35rem;}
+ul.plain li::marker,ol.plain li::marker{color:var(--violet);}
+
+code{font-family:var(--mono);background:var(--surface2);border:1px solid var(--border);padding:.12rem .4rem;border-radius:3px;font-size:.83em;color:var(--rose);}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;overflow-x:auto;margin:1.2rem 0;}
+pre code{background:none;border:none;padding:0;color:var(--muted);font-size:.78rem;line-height:1.75;white-space:pre;}
+
+/* Tables */
+.table-wrap{overflow-x:auto;margin:1.2rem 0 1.6rem;border:1px solid var(--border);border-radius:var(--radius);}
+table{width:100%;border-collapse:collapse;font-size:.85rem;}
+th{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--surface2);text-align:left;padding:.7rem 1rem;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:var(--text);font-weight:300;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--amber-glow);}
+
+/* Blockquote / pull-quote */
+.pull-quote{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.55;color:var(--amber);padding:0 0 0 1.1rem;border-left:2px solid var(--amber-dim);margin:1.6rem 0;}
+
+/* Voice-coded insert (Gemini = Google = teal, per Ukubona ROYGBIV convention) */
+.voice-insert{background:var(--teal-glow);border:1px solid var(--teal-dim);border-left:3px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:1.5rem 1.7rem;margin:2rem 0;}
+.voice-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+.voice-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);}
+.voice-insert h4{font-family:var(--sans);font-weight:700;font-size:.92rem;color:var(--text);margin:1.2rem 0 .5rem;}
+.voice-insert h4:first-of-type{margin-top:0;}
+.voice-insert p{font-size:.88rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:.9rem;}
+.voice-insert em{color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;}
+
+/* Emotional grid highlight rows */
+.grid-neg td:first-child{border-left:3px solid var(--rose);}
+.grid-power td:first-child{border-left:3px solid var(--amber);}
+.grid-hope td:first-child{border-left:3px solid var(--blue);}
+.grid-opt td:first-child{border-left:3px solid var(--violet);}
+.grid-joy td:first-child{border-left:3px solid var(--green);}
+
+hr.div{border:0;height:1px;background:var(--border);margin:2.6rem 0;}
+
+.editorial-note{font-family:var(--mono);font-size:.75rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.3rem;margin:1.4rem 0;line-height:1.7;}
+.editorial-note code{font-size:.78rem;}
+
+footer{margin-top:4rem;border-top:1px solid var(--border);padding:1.6rem var(--edge);max-width:var(--content-width);margin-left:auto;margin-right:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;}
+footer .brand{font-family:var(--serif);font-size:1rem;color:var(--amber);font-style:italic;}
+footer .ts{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.06em;text-align:right;line-height:1.6;}
+
+@media (max-width:580px){
+  .hero{padding:2.4rem 0 1.8rem;}
+  .toc{padding:1.3rem 1.2rem;}
+  footer{flex-direction:column;align-items:flex-start;}
+  footer .ts{text-align:left;}
+}
+
+::selection{background:var(--amber);color:#08080D;}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px;}
 </style>
 </head>
 <body>
-<div class="container">
 
-<h1>Create Crazy Gospel Chords</h1>
-<h3><a href="https://www.youtube.com/@TheGospelUniversity">Gospel University</a> &mdash; Online Gospel Music Academy</h3>
-<p><em>The Brathwaite Organization, Inc.</em></p>
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="nav-inner">
+    <div class="logo-wrap" aria-hidden="true">
+      <img class="logo-dark" src="https://abikesa.github.io/logos/assets/ukubona-dark.png" alt=""/>
+      <img class="logo-light" src="https://abikesa.github.io/logos/assets/ukubona-light.png" alt=""/>
+    </div>
+    <div class="nav-brand">Ukubona <span class="nav-sub">· Gospel University Transcription</span></div>
+    <nav class="nav-links" aria-label="External links">
+      <a href="https://www.youtube.com/@TheGospelUniversity" target="_blank" rel="noopener">channel ↗</a>
+      <a href="https://ukubona-llc.github.io/naming/" target="_blank" rel="noopener">naming ↗</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" aria-label="Toggle colour theme">light</button>
+  </div>
+</nav>
+<div class="rail"><div class="rail-fill" id="rail-fill"></div></div>
 
-<blockquote>
-Transcribed and reorganized from individual PDF reference sheets into the instructor's intended Phase &rarr; Module &rarr; Lesson sequence.
-</blockquote>
+<div class="shell">
 
-<hr>
+  <div class="hero">
+    <p class="eyebrow">Gospel University &middot; Online Gospel Music Academy</p>
+    <h1>Create <em>Crazy</em> Gospel Chords</h1>
+    <p class="hero-meta">The Brathwaite Organization, Inc. &middot; transcribed &amp; reorganized from individual PDF reference sheets into the instructor's intended Phase &rarr; Module &rarr; Lesson sequence.</p>
+  </div>
 
-<h2><a href="https://ukubona-llc.github.io/naming/">Table of Contents</a></h2>
+  <div class="toc">
+    <div class="toc-head">Table of Contents</div>
 
-<p><strong>PHASE 2 &mdash; Module 1: Crazy Chords Foundation</strong></p>
-<ol>
-    <li><a href="#lesson-1">Lesson 1 &mdash; Music Notes &amp; Names</a></li>
-    <li><a href="#lesson-2">Lesson 2 &mdash; Intervals &amp; The Number System</a></li>
-    <li><a href="#major-scale">The Major Scale Formula</a></li>
-    <li><a href="#lesson-5">Lesson 5 &mdash; How To Build Chords</a></li>
-    <li><a href="#lesson-6">Lesson 6 &mdash; Diatonic Chords</a></li>
-    <li><a href="#tensions">Adding Tensions Worksheet (v3.0)</a></li>
-</ol>
+    <div class="toc-phase">Phase 2 &mdash; Module 1: Crazy Chords Foundation</div>
+    <ol>
+      <li><a href="#lesson-1">Music Notes &amp; Names</a></li>
+      <li><a href="#lesson-2">Intervals &amp; The Number System</a></li>
+      <li><a href="#major-scale">The Major Scale Formula</a></li>
+      <li><a href="#lesson-5">How To Build Chords</a></li>
+      <li><a href="#lesson-6">Diatonic Chords</a></li>
+      <li><a href="#tensions">Adding Tensions Worksheet (v3.0)</a></li>
+    </ol>
 
-<p><strong>PHASE 3</strong></p>
-<ol start="7">
-    <li><a href="#lesson-8">Lesson 8 &mdash; Common Gospel Progressions</a></li>
-    <li><a href="#left-hand">Left Hand Chord Voicings &amp; Low Interval Limits</a></li>
-</ol>
+    <div class="toc-phase">Phase 3</div>
+    <ol start="7">
+      <li><a href="#lesson-8">Common Gospel Progressions</a></li>
+      <li><a href="#left-hand">Left Hand Chord Voicings &amp; Low Interval Limits</a></li>
+    </ol>
 
-<p><strong>PHASE 4</strong></p>
-<ol start="9">
-    <li><a href="#chord-stack">Chord Stack System</a></li>
-    <li><a href="#emotional-grid">Human Emotional Grid</a></li>
-</ol>
+    <div class="toc-phase">Phase 4</div>
+    <ol start="9">
+      <li><a href="#chord-stack">Chord Stack System</a></li>
+      <li><a href="#emotional-grid">Human Emotional Grid</a></li>
+    </ol>
 
-<p><strong>PHASE 5</strong></p>
-<ol start="11">
-    <li><a href="#reharm">How To Reharm Songs &mdash; The Shared Notes Principle</a></li>
-    <li><a href="#modes">How To Use Modes &amp; Modal Interchange</a></li>
-</ol>
+    <div class="toc-phase">Phase 5</div>
+    <ol start="11">
+      <li><a href="#reharm">How To Reharm Songs &mdash; The Shared Notes Principle</a></li>
+      <li><a href="#modes">How To Use Modes &amp; Modal Interchange</a></li>
+    </ol>
 
-<p><strong>PHASE 6</strong></p>
-<ol start="13">
-    <li><a href="#passing-bass">Common Passing Chord Bass Movements</a></li>
-    <li><a href="#passing-stack">Chord Stack Passing Movements</a></li>
-</ol>
+    <div class="toc-phase">Phase 6</div>
+    <ol start="13">
+      <li><a href="#passing-bass">Common Passing Chord Bass Movements</a></li>
+      <li><a href="#passing-stack">Chord Stack Passing Movements</a></li>
+    </ol>
 
-<p><strong>Note on source files</strong> &mdash; <code>Phase7.pdf</code> and <code>Phase6PassingChordBassMovements...pdf</code> contain identical content ("Common Passing Chord Bass Movements"). This appears to be a duplicate/mislabeled export rather than distinct Phase 7 material; the content is presented once below under Phase 6, where it belongs pedagogically.</p>
+    <div class="toc-note">
+      <strong style="color:var(--text)">Note on source files</strong> &mdash; <code>Phase7.pdf</code> and <code>Phase6PassingChordBassMovements...pdf</code> contain identical content ("Common Passing Chord Bass Movements"). This appears to be a duplicate/mislabeled export rather than distinct Phase 7 material; the content is presented once below under Phase 6, where it belongs pedagogically.
+    </div>
+  </div>
 
-<hr>
+  <!-- PHASE 2 -->
+  <div class="phase-marker" id="phase-2"><small>Phase 2</small>Module 1 &mdash; Crazy Chords Foundation</div>
 
-<h2 id="phase-2">PHASE 2 &mdash; Module 1: Crazy Chords Foundation</h2>
+  <h2 class="lesson-h" id="lesson-1">Lesson 1 &mdash; Music Notes &amp; Names</h2>
+  <h3 class="sub-h">Music Notes</h3>
+  <p class="body-text">There are 7 basic (natural) notes in the music language, using the first 7 letters of the English alphabet:</p>
+  <p class="pull-quote">A &ndash; B &ndash; C &ndash; D &ndash; E &ndash; F &ndash; G</p>
+  <p class="body-text">The note names repeat continuously:</p>
+  <pre><code>A - B - C - D - E - F - G - A - B - C - D - E - F - G ...</code></pre>
+  <p class="body-text">On a keyboard, these are the <strong>white keys</strong>.</p>
+  <p class="body-text">The <strong>C Major Scale</strong> is one of the first scales most musicians learn. It uses all the basic notes, in this order:</p>
+  <pre><code>C - D - E - F - G - A - B - C</code></pre>
 
-<h3 id="lesson-1">Lesson 1 &mdash; Music Notes &amp; Names</h3>
-<p><strong>Music Notes</strong></p>
-<p>There are 7 basic (natural) notes in the music language, using the first 7 letters of the English alphabet:</p>
-<p><strong>A &ndash; B &ndash; C &ndash; D &ndash; E &ndash; F &ndash; G</strong></p>
-<p>The note names repeat continuously:</p>
-<p><code>A - B - C - D - E - F - G - A - B - C - D - E - F - G ...</code></p>
-<p>On a keyboard, these are the <strong>white keys</strong>.</p>
-<p>The <strong>C Major Scale</strong> is one of the first scales most musicians learn. It uses all the basic notes, in this order:</p>
-<p><code>C - D - E - F - G - A - B - C</code></p>
-
-<p><strong>Sharps &amp; Flats</strong></p>
-<ul>
+  <h3 class="sub-h">Sharps &amp; Flats</h3>
+  <ul class="plain">
     <li><strong>Sharp (&sharp;):</strong> raise the note you are playing to the note directly <em>above</em> it.</li>
     <li><strong>Flat (&flat;):</strong> lower the note you are playing to the note directly <em>below</em> it.</li>
-</ul>
-<p>Sharps and flats use the basic/natural note names as their foundation (e.g., C&sharp; or E&flat;).</p>
-<p>On each <strong>black key</strong>, there are two note names, because each black key is simultaneously the sharp of one note and the flat of another (e.g., the key between C and D is both C&sharp; and D&flat;).</p>
+  </ul>
+  <p class="body-text">Sharps and flats use the basic/natural note names as their foundation (e.g., C&sharp; or E&flat;).</p>
+  <p class="body-text">On each <strong>black key</strong>, there are two note names, because each black key is simultaneously the sharp of one note and the flat of another (e.g., the key between C and D is both C&sharp; and D&flat;).</p>
 
-<hr>
+  <hr class="div">
 
-<h3 id="lesson-2">Lesson 2 &mdash; Intervals &amp; The Number System</h3>
-<p><strong>Intervals</strong></p>
-<p>An interval = the distance between two notes.</p>
-<p><strong>The Number System</strong> assigns a number to each note of the major scale (7 notes). In the key of C:</p>
-<p><code>C(1) - D(2) - E(3) - F(4) - G(5) - A(6) - B(7) - C(8)</code></p>
-<p>This is "musical slang" &mdash; a note's name can be substituted for its number (e.g., E = the "3", A = the "6").</p>
+  <h2 class="lesson-h" id="lesson-2">Lesson 2 &mdash; Intervals &amp; The Number System</h2>
+  <h3 class="sub-h">Intervals</h3>
+  <p class="body-text">An interval = the distance between two notes.</p>
+  <p class="body-text"><strong>The Number System</strong> assigns a number to each note of the major scale (7 notes). In the key of C:</p>
+  <pre><code>C(1) - D(2) - E(3) - F(4) - G(5) - A(6) - B(7) - C(8)</code></pre>
+  <p class="body-text">This is "musical slang" &mdash; a note's name can be substituted for its number (e.g., E = the "3", A = the "6").</p>
 
-<p><strong>Basic Intervals (from C):</strong></p>
-<table>
+  <h3 class="sub-h">Basic Intervals (from C)</h3>
+  <div class="table-wrap"><table>
     <tr><th>Interval</th><th>Notes</th></tr>
     <tr><td>2nd</td><td>C(1) &ndash; D(2)</td></tr>
     <tr><td>3rd</td><td>C(1) &ndash; E(3)</td></tr>
@@ -179,12 +257,12 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>6th</td><td>C(1) &ndash; A(6)</td></tr>
     <tr><td>7th</td><td>C(1) &ndash; B(7)</td></tr>
     <tr><td>8th / Octave</td><td>C(1) &ndash; C(8)</td></tr>
-</table>
+  </table></div>
 
-<p><strong>Extended Intervals</strong></p>
-<p>Continuing the number system past the octave:</p>
-<p><code>C(8) - D(9) - E(10) - F(11) - G(12) - A(13) - B(14) - C(15)</code></p>
-<table>
+  <h3 class="sub-h">Extended Intervals</h3>
+  <p class="body-text">Continuing the number system past the octave:</p>
+  <pre><code>C(8) - D(9) - E(10) - F(11) - G(12) - A(13) - B(14) - C(15)</code></pre>
+  <div class="table-wrap"><table>
     <tr><th>Interval</th><th>Notes</th></tr>
     <tr><td>9th</td><td>C(1) &ndash; D(9)</td></tr>
     <tr><td>10th</td><td>C(1) &ndash; E(10)</td></tr>
@@ -193,26 +271,26 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>13th</td><td>C(1) &ndash; A(13)</td></tr>
     <tr><td>14th</td><td>C(1) &ndash; B(14)</td></tr>
     <tr><td>15th / Double Octave</td><td>C(1) &ndash; C(15)</td></tr>
-</table>
+  </table></div>
 
-<p><strong>Three Special Intervals</strong></p>
-<ul>
+  <h3 class="sub-h">Three Special Intervals</h3>
+  <ul class="plain">
     <li><strong>Half (H) Step:</strong> move one note to the immediate right or left (e.g., C to C&sharp;, or C to B).</li>
     <li><strong>Whole (W) Step:</strong> two half steps in either direction.</li>
     <li><strong>Minor (min) 3rd:</strong> three half steps in either direction.</li>
-</ul>
+  </ul>
 
-<hr>
+  <hr class="div">
 
-<h3 id="major-scale">The Major Scale Formula</h3>
-<p>Understanding <em>how</em> the major scale is constructed (via intervals and the number system) &mdash; not just memorizing notes &mdash; is the foundation for building any chord.</p>
-<p><strong>Formula (Whole/Half step pattern):</strong></p>
-<p><code>W - W - H - W - W - W - H</code></p>
-<p>Applied to C Major:</p>
-<p><code>1(C) - W - 2(D) - W - 3(E) - H - 4(F) - W - 5(G) - W - 6(A) - W - 7(B) - H - 1(C)</code></p>
+  <h2 class="lesson-h" id="major-scale">The Major Scale Formula</h2>
+  <p class="body-text">Understanding <em>how</em> the major scale is constructed (via intervals and the number system) &mdash; not just memorizing notes &mdash; is the foundation for building any chord.</p>
+  <p class="body-text"><strong>Formula (Whole/Half step pattern):</strong></p>
+  <pre><code>W - W - H - W - W - W - H</code></pre>
+  <p class="body-text">Applied to C Major:</p>
+  <pre><code>1(C) - W - 2(D) - W - 3(E) - H - 4(F) - W - 5(G) - W - 6(A) - W - 7(B) - H - 1(C)</code></pre>
 
-<p><strong>Major Scales &amp; Fingerings (all keys)</strong></p>
-<table>
+  <h3 class="sub-h">Major Scales &amp; Fingerings (all keys)</h3>
+  <div class="table-wrap"><table>
     <tr><th>Key</th><th>Notes</th><th>RH Fingering</th><th>LH Fingering</th></tr>
     <tr><td>C</td><td>C-D-E-F-G-A-B-C</td><td>1 2 3 1 2 3 4 5</td><td>5 4 3 2 1 3 2 1</td></tr>
     <tr><td>D&flat;</td><td>D&flat;-E&flat;-F-G&flat;-A&flat;-B&flat;-C-D&flat;</td><td>2 3 1 2 3 4 1 2</td><td>3 2 1 4 3 2 1 3</td></tr>
@@ -226,20 +304,20 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>A</td><td>A-B-C&sharp;-D-E-F&sharp;-G&sharp;-A</td><td>1 2 3 1 2 3 4 5</td><td>5 4 3 2 1 3 2 1</td></tr>
     <tr><td>B&flat;</td><td>B&flat;-C-D-E&flat;-F-G-A-B&flat;</td><td>4 1 2 3 1 2 3 4</td><td>3 2 1 4 3 2 1 3</td></tr>
     <tr><td>B</td><td>B-C&sharp;-D&sharp;-E-F&sharp;-G&sharp;-A&sharp;-B</td><td>1 2 3 1 2 3 4 5</td><td>4 3 2 1 4 3 2 1</td></tr>
-</table>
+  </table></div>
 
-<hr>
+  <hr class="div">
 
-<h3 id="lesson-5">Lesson 5 &mdash; How To Build Chords</h3>
-<p><strong>Basic Chords</strong> are divided into two categories: <strong>Triads</strong> (3-note chords) and <strong>4-note chords</strong>.</p>
-<ul>
+  <h2 class="lesson-h" id="lesson-5">Lesson 5 &mdash; How To Build Chords</h2>
+  <p class="body-text"><strong>Basic Chords</strong> are divided into two categories: <strong>Triads</strong> (3-note chords) and <strong>4-note chords</strong>.</p>
+  <ul class="plain">
     <li>Triads are formed using <strong>1 &ndash; 3 &ndash; 5</strong> of the major scale (two exceptions apply &mdash; see suspended chords below).</li>
     <li>4-note chords add the 6th or 7th note of the major scale to the triad (e.g., 1-3-5-6 or 1-3-5-7).</li>
     <li>Any note in a triad or 4-note chord can be sharped or flatted <strong>except the root (1)</strong>.</li>
-</ul>
+  </ul>
 
-<p><strong>Triads</strong></p>
-<table>
+  <h3 class="sub-h">Triads</h3>
+  <div class="table-wrap"><table>
     <tr><th>Chord</th><th>Formula</th><th>Example (C)</th><th>Symbol</th></tr>
     <tr><td>Major Triad</td><td>1 - 3 - 5</td><td>C - E - G</td><td>maj</td></tr>
     <tr><td>Minor Triad</td><td>1 - &flat;3 - 5</td><td>C - E&flat; - G</td><td>min</td></tr>
@@ -247,10 +325,10 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>Augmented Triad</td><td>1 - 3 - &sharp;5</td><td>C - E - G&sharp;</td><td>aug</td></tr>
     <tr><td>Suspended 4th Triad</td><td>1 - 4 - 5</td><td>C - F - G</td><td>sus4</td></tr>
     <tr><td>Suspended 2nd Triad</td><td>1 - 2 - 5</td><td>C - D - G</td><td>sus2</td></tr>
-</table>
+  </table></div>
 
-<p><strong>7th / 6th Chords</strong></p>
-<table>
+  <h3 class="sub-h">7th / 6th Chords</h3>
+  <div class="table-wrap"><table>
     <tr><th>Chord</th><th>Formula</th><th>Example (C)</th><th>Symbol</th></tr>
     <tr><td>Major 6th</td><td>1 - 3 - 5 - 6</td><td>C - E - G - A</td><td>Maj6</td></tr>
     <tr><td>Minor 6th</td><td>1 - &flat;3 - 5 - 6</td><td>C - E&flat; - G - A</td><td>Min6</td></tr>
@@ -262,17 +340,17 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>Diminished Major 7th</td><td>1 - &flat;3 - &flat;5 - 7</td><td>C - E&flat; - G&flat; - B</td><td>dim Maj7</td></tr>
     <tr><td>Minor Major 7th</td><td>1 - &flat;3 - 5 - 7</td><td>C - E&flat; - G - B</td><td>min+Maj7</td></tr>
     <tr><td>Dominant 7th</td><td>1 - 3 - 5 - &flat;7</td><td>C - E - G - B&flat;</td><td>dom7 / 7</td></tr>
-</table>
-<p><em>Note: double flats (&flat;&flat;) and double sharps (&sharp;&sharp;) are the "whole step" versions of the half-step flat/sharp.</em></p>
-<p><strong>Homework:</strong> Play all chords above in every key, in both hands, naming each chord aloud as you play it (e.g., "A&flat; Maj7," "C min7"). Goal: confident, hesitation-free recall.</p>
+  </table></div>
+  <p class="body-text"><em style="color:var(--muted)">Note: double flats (&flat;&flat;) and double sharps (&sharp;&sharp;) are the "whole step" versions of the half-step flat/sharp.</em></p>
+  <div class="editorial-note"><strong style="color:var(--amber)">Homework</strong> &mdash; Play all chords above in every key, in both hands, naming each chord aloud as you play it (e.g., "A&flat; Maj7," "C min7"). Goal: confident, hesitation-free recall.</div>
 
-<hr>
+  <hr class="div">
 
-<h3 id="lesson-6">Lesson 6 &mdash; Diatonic Chords</h3>
-<p>Every note in the major scale has a specific chord built on it &mdash; these are the <strong>Diatonic Chords</strong>. Most songs default to these chords in one form or another.</p>
+  <h2 class="lesson-h" id="lesson-6">Lesson 6 &mdash; Diatonic Chords</h2>
+  <p class="body-text">Every note in the major scale has a specific chord built on it &mdash; these are the <strong>Diatonic Chords</strong>. Most songs default to these chords in one form or another.</p>
 
-<p><strong>Diatonic Chords of C Major (Roman Numeral System)</strong></p>
-<table>
+  <h3 class="sub-h">Diatonic Chords of C Major (Roman Numeral System)</h3>
+  <div class="table-wrap"><table>
     <tr><th>Degree</th><th>Chord</th><th>Notes</th></tr>
     <tr><td>I</td><td>C maj7</td><td>C - E - G - B</td></tr>
     <tr><td>II</td><td>D min7</td><td>D - F - A - C</td></tr>
@@ -281,23 +359,23 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>V</td><td>G dom7</td><td>G - B - D - F</td></tr>
     <tr><td>VI</td><td>A min7</td><td>A - C - E - G</td></tr>
     <tr><td>VII</td><td>B min7(&flat;5)</td><td>B - D - F - A</td></tr>
-</table>
-<p><strong>Homework:</strong> Play diatonic chords in every key, both hands, naming each Roman numeral (I maj7, V dom7, etc.) as you play, to build on-the-fly recall for performance.</p>
+  </table></div>
+  <div class="editorial-note"><strong style="color:var(--amber)">Homework</strong> &mdash; Play diatonic chords in every key, both hands, naming each Roman numeral (I maj7, V dom7, etc.) as you play, to build on-the-fly recall for performance.</div>
 
-<hr>
+  <hr class="div">
 
-<h3 id="tensions">Adding Tensions Worksheet (v3.0)</h3>
-<p><strong>Rules for Tensions</strong></p>
-<ul>
+  <h2 class="lesson-h" id="tensions">Adding Tensions Worksheet <span style="color:var(--muted);font-family:var(--mono);font-size:.6em;letter-spacing:.06em;">v3.0</span></h2>
+  <h3 class="sub-h">Rules for Tensions</h3>
+  <ul class="plain">
     <li>Tensions are only applied when the <strong>7th</strong> of a chord is present.</li>
     <li>Tension choices: <strong>9th, 11th, 13th.</strong></li>
     <li>Tensions can be raised (&sharp;) or lowered (&flat;) a half step &mdash; <strong>exception:</strong> the 11th cannot be flatted (it becomes a 3rd).</li>
     <li>Multiple tensions can combine, e.g., <code>C maj7(9, &sharp;11)</code>.</li>
     <li>Tensions are "icing on the cake" &mdash; don't overuse.</li>
-</ul>
+  </ul>
 
-<p><strong>Available Tensions by Chord Type</strong></p>
-<table>
+  <h3 class="sub-h">Available Tensions by Chord Type</h3>
+  <div class="table-wrap"><table>
     <tr><th>Chord (formula)</th><th>Available Tensions</th></tr>
     <tr><td>Major 7th (1-3-5-7)</td><td>9, &sharp;11, 13</td></tr>
     <tr><td>Minor 7th (1-&flat;3-5-&flat;7)</td><td>9, 11, 13</td></tr>
@@ -308,11 +386,11 @@ Transcribed and reorganized from individual PDF reference sheets into the instru
     <tr><td>Diminished Major 7th (1-&flat;3-&flat;5-7)</td><td>9</td></tr>
     <tr><td>Minor Major 7th (1-&flat;3-5-7)</td><td>9</td></tr>
     <tr><td>Augmented Maj7 (1-3-&sharp;5-7)</td><td>9, &sharp;11</td></tr>
-</table>
+  </table></div>
 
-<p><strong>Recommended Chords &amp; Tension Combinations</strong></p>
-<p><em>Reminder: any chord chosen must share the melody note ("Shared Notes Principle").</em></p>
-<pre><code>I dom7                      IV maj7 (9)
+  <h3 class="sub-h">Recommended Chords &amp; Tension Combinations</h3>
+  <p class="body-text"><em style="color:var(--muted)">Reminder: any chord chosen must share the melody note ("Shared Notes Principle").</em></p>
+  <pre><code>I dom7                      IV maj7 (9)
 I dom7(9)                   IV maj7 (9, #11, 13)
 I dom7(#9)                  IV dom7 (9)
 I dom7(#9, 13)               IV dom7 (9, #11, 13)
@@ -335,36 +413,35 @@ III dom7 (#9, b13)
 III min7 (b5)
 III dim7</code></pre>
 
-<hr>
+  <!-- PHASE 3 -->
+  <div class="phase-marker" id="phase-3"><small>Phase 3</small>Progressions &amp; Voicings</div>
 
-<h2 id="phase-3">PHASE 3</h2>
-
-<h3 id="lesson-8">Lesson 8 &mdash; Common Gospel Progressions</h3>
-<p><em>Practice tip: use "Play-Along Backing Tracks" as your drilling tool.</em></p>
-<p><strong>Key Points</strong></p>
-<ul>
+  <h2 class="lesson-h" id="lesson-8">Lesson 8 &mdash; Common Gospel Progressions</h2>
+  <p class="lede">Practice tip: use "Play-Along Backing Tracks" as your drilling tool.</p>
+  <h3 class="sub-h">Key Points</h3>
+  <ul class="plain">
     <li>These chord progressions are the building blocks for almost all gospel songs &mdash; practice them.</li>
     <li>Diminished 7th chords (1-&flat;3-&flat;5-&flat;&flat;7) are, 9 times out of 10, built on notes <em>outside</em> the major scale of the key you're in. They function as <strong>connecting chords</strong> (covered in more depth in Module 2).</li>
     <li>Basic diatonic versions of these progressions are just a starting point &mdash; substitute in Advanced Gospel Chords (Lesson 7) to create new ideas.</li>
-</ul>
+  </ul>
 
-<p><strong>Chord Substitution Examples</strong></p>
-<table>
+  <h3 class="sub-h">Chord Substitution Examples</h3>
+  <div class="table-wrap"><table>
     <tr><th>Progression</th><th>Substituted Version</th></tr>
     <tr><td>1 - 3 - 6</td><td>I maj7(9,13) &ndash; III dom7(&flat;9) &ndash; VI min7</td></tr>
     <tr><td>2 - 5 - 1</td><td>II min7(9,11) &ndash; V dom7(&flat;9,&flat;13) &ndash; I maj7(9)</td></tr>
     <tr><td>7 - 3 - 6</td><td>VII min7(9,11) &ndash; III dom7(&flat;9,&sharp;9,&flat;13) &ndash; VI min7(9,11)</td></tr>
     <tr><td>1 - 3 - 6 - 2 - 5 - 1</td><td>I maj7(9,13) &ndash; III dom7(&flat;9,&sharp;9,11) &ndash; VI min7 &ndash; II dom7(9,13) &ndash; V7sus(9,13) &ndash; I maj6(add2)</td></tr>
     <tr><td>7 - 3 - 6 - 2 - 5 - 1</td><td>VII min7(9,11) &ndash; III dom7(&sharp;9,&flat;13) &ndash; VI maj7(9,13) &ndash; II min7(9,11) &ndash; II dom7(9,&sharp;11,13) &ndash; V7sus(9,13) &ndash; I maj7(9)</td></tr>
-</table>
+  </table></div>
 
-<hr>
+  <hr class="div">
 
-<h3 id="left-hand">Left Hand Chord Voicings &amp; Low Interval Limits</h3>
-<p><strong>Low Interval Limits (LILs) Explained</strong></p>
-<p>The goal for left-hand voicings is to play as <em>low</em> as possible on the piano without sounding muddy. LILs tell you the lowest note from which a given interval still sounds clean.</p>
+  <h2 class="lesson-h" id="left-hand">Left Hand Chord Voicings &amp; Low Interval Limits</h2>
+  <h3 class="sub-h">Low Interval Limits (LILs) Explained</h3>
+  <p class="body-text">The goal for left-hand voicings is to play as <em>low</em> as possible on the piano without sounding muddy. LILs tell you the lowest note from which a given interval still sounds clean.</p>
 
-<table>
+  <div class="table-wrap"><table>
     <tr><th>Interval</th><th>Lowest Note</th></tr>
     <tr><td>Min 2nd (&flat;2)</td><td>C&sharp;3</td></tr>
     <tr><td>Maj 2nd</td><td>C3</td></tr>
@@ -378,12 +455,11 @@ III dim7</code></pre>
     <tr><td>Min 7th (&flat;7)</td><td>D&flat;2</td></tr>
     <tr><td>Maj 7th</td><td>E&flat;2</td></tr>
     <tr><td>Octave</td><td>Infinite</td></tr>
-</table>
+  </table></div>
+  <p class="body-text">You <em>can</em> stack intervals &mdash; e.g., Perfect 5th + Minor 3rd = 1-5-&flat;7.</p>
 
-<p>You <em>can</em> stack intervals &mdash; e.g., Perfect 5th + Minor 3rd = 1-5-&flat;7.</p>
-
-<p><strong>Recommended Left Hand Chord Voicings</strong></p>
-<table>
+  <h3 class="sub-h">Recommended Left Hand Chord Voicings</h3>
+  <div class="table-wrap"><table>
     <tr><th>Voicing</th><th>Use for</th></tr>
     <tr><td>1 - &flat;7</td><td>Dominant, Dom7(sus4), Minor 7th chords</td></tr>
     <tr><td>1 - 5 - &flat;7</td><td>Minor 7th, Dom7(sus4), Dominant chords</td></tr>
@@ -396,86 +472,81 @@ III dim7</code></pre>
     <tr><td>1 - 6</td><td>Major (1/5 inversion), Minor 6th, Diminished 7th</td></tr>
     <tr><td>1 - 6 - &flat;3</td><td>Diminished chords</td></tr>
     <tr><td>1 - 3 - &flat;7 (or 1-&flat;7-3)</td><td>Dominant chords</td></tr>
-</table>
-<p><em>You can add further notes to these LH voicings based on available tensions for the chord being played.</em></p>
+  </table></div>
+  <p class="body-text"><em style="color:var(--muted)">You can add further notes to these LH voicings based on available tensions for the chord being played.</em></p>
 
-<hr>
+  <!-- PHASE 4 -->
+  <div class="phase-marker" id="phase-4"><small>Phase 4</small>Stacking &amp; Emotional Mapping</div>
 
-<h2 id="phase-4">PHASE 4</h2>
-
-<h3 id="chord-stack">Chord Stack System</h3>
-<p>The <strong>Chord Stack System</strong> organizes all chords and available tensions into five categories, by increasing complexity, corresponding to gospel-music styles:</p>
-<ol>
+  <h2 class="lesson-h" id="chord-stack">Chord Stack System</h2>
+  <p class="body-text">The <strong>Chord Stack System</strong> organizes all chords and available tensions into five categories, by increasing complexity, corresponding to gospel-music styles:</p>
+  <ol class="plain">
     <li><strong>Traditional / Hymn</strong> &mdash; Major triads, Minor triads, Augmented triads, Minor 6th chords, Dominant 7th chords (no tensions)</li>
-    <li><strong>Worship / CCM </strong> &mdash; Major triad (add2), Minor triad (add2)</li>
+    <li><strong>Worship / CCM</strong> &mdash; Major triad (add2), Minor triad (add2)</li>
     <li><strong>Churchy / Blues &amp; Soul</strong> &mdash; Minor 7th, Dominant &flat;9, 9 &amp; &sharp;9 chords, diminished chords, diatonic chords</li>
     <li><strong>Early Contemporary / RnB</strong> &mdash; Major7 (9,13), Minor7 (9,11), Dom7sus4 (9,13)</li>
     <li><strong>Late Contemporary / Jazz</strong> &mdash; All chords with all tension possibilities (see Adding Tensions worksheet)</li>
-</ol>
-<p><strong>Note:</strong> each category <em>includes</em> the chords from all prior categories (e.g., Churchy includes Traditional + Worship/CCM + Churchy).</p>
-<p><strong>Chord Stack Combos (CSCs):</strong> You can combine categories within a single song &mdash; e.g., play Churchy stacks, insert a chord from Modern Contemporary, then return to Churchy. This is how new progressions, approaches, and reharmonizations are created.</p>
+  </ol>
+  <p class="body-text"><strong>Note:</strong> each category <em>includes</em> the chords from all prior categories (e.g., Churchy includes Traditional + Worship/CCM + Churchy).</p>
+  <p class="body-text"><strong>Chord Stack Combos (CSCs):</strong> You can combine categories within a single song &mdash; e.g., play Churchy stacks, insert a chord from Modern Contemporary, then return to Churchy. This is how new progressions, approaches, and reharmonizations are created.</p>
 
-<div class="gemini-insert">
-    <p>Yes, this is entirely legit. It reads perfectly as a roadmap for harmonic complexity, very similar to the frameworks used in professional contemporary keyboard pedagogy (like Berklee's gospel and R&B curricula).</p>
-    <p>Rather than strict historical boundaries, this list represents the <strong>evolution of tension and color</strong> in modern playing. Here is a breakdown of why this categorization is so accurate:</p>
-    
-    <h2>The Harmonic Progression</h2>
-    
-    <p><strong>1. Traditional / Hymn</strong><br>
-    This is the foundation of four-part SATB (Soprano, Alto, Tenor, Bass) harmony. Hymnals rely almost exclusively on primary triads. When a dominant 7th is used, it is usually a pure V7 with no alterations, serving a strict, predictable function to resolve to the tonic.</p>
-    
-    <p><strong>2. Worship / CCM</strong><br>
-    The <code>add2</code> (often conceptualized as an <code>add9</code>) is the absolute hallmark of Contemporary Christian Music (think Hillsong or Elevation). It provides a wide, anthemic sound that adds color and emotion <em>without</em> introducing the functional pull or jazz-like tension of a 7th.</p>
-    
-    <p><strong>3. Churchy / Blues &amp; Soul</strong><br>
-    This is where traditional Black gospel and classic soul live. The framework shifts to heavy tension and release. Diminished chords become primary vehicles for passing chords, and the altered dominants (particularly the &flat;9 and &sharp;9) create the gritty, blues-infused "preacher chords" and classic turnaround movements.</p>
-    
-    <p><strong>4. Early Contemporary / RnB</strong><br>
-    This captures the 90s/early 2000s shift (e.g., Kirk Franklin, early Fred Hammond, classic R&B). The harmony gets lush and floating. You see the widespread use of Maj9 and Min11 chords. The <code>Dom7sus4</code> (often voiced simply as a slash chord, like F/G) becomes a staple, providing a dominant function that feels smooth and suspended rather than harsh.</p>
-    
-    <p><strong>5. Late Contemporary / Jazz</strong><br>
-    This is the modern gospel, neo-soul, and jazz fusion space (e.g., Robert Glasper, modern worship). At this level, basic triads are practically obsolete. Every chord is an opportunity for upper-structure extensions, full alterations (&flat;9, &sharp;9, &flat;5, &sharp;5), and rootless voicings.</p>
-    
-    <h2>The Functional Shift</h2>
-    <p>The brilliance of this list is that it forces a shift in how you think about the keyboard. Moving from Level 1 to Level 5 requires transitioning from thinking about "shapes" to thinking <strong>functionally</strong>. By the time you are drilling Level 5 voicings&mdash;like locking in a rootless Dom 9 and taking it across all 12 keys&mdash;you aren't just playing notes; you are managing voice leading, inner voice movement, and tension resolution.</p>
-    <p><em>-- Gemini 3.1 Pro</em></p>
-</div>
+  <div class="voice-insert">
+    <div class="voice-tag">Gemini 3.1 Pro &middot; cross-check</div>
+    <p>This categorization holds up against the frameworks used in professional contemporary keyboard pedagogy, such as Berklee's gospel and R&amp;B curricula. Rather than strict historical boundaries, the list traces the evolution of tension and color in modern playing.</p>
 
-<h3 id="emotional-grid">Human Emotional Grid</h3>
-<p>A mapping of harmonic "weight" to emotional arc, on a 0&ndash;50+ scale. <em>(Uses "1 to 1" logic &mdash; happy emotion = major chords &mdash; but more nuanced emotional tapestries can be built by combining elements in different orders.)</em></p>
+    <h4>1. Traditional / Hymn</h4>
+    <p>The foundation of four-part SATB harmony. Hymnals lean almost exclusively on primary triads, and a dominant 7th, when it appears, is usually a pure V7 resolving predictably to the tonic.</p>
 
-<table>
+    <h4>2. Worship / CCM</h4>
+    <p>The add2 (often felt as an add9) is the hallmark of contemporary Christian music &mdash; a wide, anthemic color without the functional pull of a full 7th.</p>
+
+    <h4>3. Churchy / Blues &amp; Soul</h4>
+    <p>The home of traditional Black gospel and classic soul, built on tension and release: diminished passing chords and altered dominants (&flat;9, &sharp;9) produce the gritty "preacher chord" turnarounds.</p>
+
+    <h4>4. Early Contemporary / RnB</h4>
+    <p>The 90s/early-2000s sound &mdash; lush, floating Maj9 and Min11 harmony, with the Dom7sus4 (often voiced as a slash chord) providing a smooth, suspended dominant function.</p>
+
+    <h4>5. Late Contemporary / Jazz</h4>
+    <p>Modern gospel, neo-soul, and jazz fusion territory, where triads are largely retired in favor of upper-structure extensions, full alterations, and rootless voicings.</p>
+
+    <h4>The Functional Shift</h4>
+    <p>Moving from level 1 to level 5 requires a shift from thinking in shapes to thinking functionally &mdash; by the top level you're managing voice leading and tension resolution, not just naming chords.</p>
+  </div>
+
+  <h2 class="lesson-h" id="emotional-grid">Human Emotional Grid</h2>
+  <p class="body-text">A mapping of harmonic "weight" to emotional arc, on a 0&ndash;50+ scale. <em style="color:var(--muted)">(Uses "1 to 1" logic &mdash; happy emotion = major chords &mdash; but more nuanced emotional tapestries can be built by combining elements in different orders.)</em></p>
+
+  <div class="table-wrap"><table>
     <tr><th>Score Range</th><th>Music Elements</th><th>Emotional Stage</th><th>Description</th></tr>
-    <tr><td>0&ndash;15</td><td>Minor / Diminished chords, Minor scales w/ min6</td><td>Weakest Negative</td><td>Powerlessness, sadness, depression</td></tr>
-    <tr><td>16&ndash;25</td><td>Dominant chords, Minor 7th chords, Blues scale, Minor scales w/ maj6</td><td>Power Assertion</td><td>Regaining self-respect, revenge, defeating the devil</td></tr>
-    <tr><td>26&ndash;39</td><td>Major 7th / Minor 7th chords, arpeggios, scales</td><td>Hopeful / Reflect</td><td>Hope, faith, last bit of strength</td></tr>
-    <tr><td>40&ndash;50</td><td>(transition zone)</td><td>Optimistic</td><td>Light at the end of the tunnel; relying on God &mdash; "if it happened for them, it can happen for me"</td></tr>
-    <tr><td>40&ndash;50+</td><td>Major triads, Major scales &amp; arpeggios</td><td>Joy / Exuberation</td><td>"I made it!" &mdash; victorious jubilation</td></tr>
-</table>
+    <tr class="grid-neg"><td>0&ndash;15</td><td>Minor / Diminished chords, Minor scales w/ min6</td><td>Weakest Negative</td><td>Powerlessness, sadness, depression</td></tr>
+    <tr class="grid-power"><td>16&ndash;25</td><td>Dominant chords, Minor 7th chords, Blues scale, Minor scales w/ maj6</td><td>Power Assertion</td><td>Regaining self-respect, revenge, defeating the devil</td></tr>
+    <tr class="grid-hope"><td>26&ndash;39</td><td>Major 7th / Minor 7th chords, arpeggios, scales</td><td>Hopeful / Reflect</td><td>Hope, faith, last bit of strength</td></tr>
+    <tr class="grid-opt"><td>40&ndash;50</td><td>(transition zone)</td><td>Optimistic</td><td>Light at the end of the tunnel; relying on God &mdash; "if it happened for them, it can happen for me"</td></tr>
+    <tr class="grid-joy"><td>40&ndash;50+</td><td>Major triads, Major scales &amp; arpeggios</td><td>Joy / Exuberation</td><td>"I made it!" &mdash; victorious jubilation</td></tr>
+  </table></div>
 
-<hr>
+  <!-- PHASE 5 -->
+  <div class="phase-marker" id="phase-5"><small>Phase 5</small>Reharmonization &amp; Modal Interchange</div>
 
-<h2 id="phase-5">PHASE 5</h2>
-
-<h3 id="reharm">How To Reharm Songs &mdash; The Shared Notes Principle</h3>
-<p><strong>"The Holy Grail of Crazy Gospel Chords"</strong></p>
-<p><strong>Shared Notes Principle:</strong> <em>the art of borrowing notes &amp; chords from other keys to use in service of the melody in a song.</em></p>
-<p><strong>Key Rules</strong></p>
-<ul>
+  <h2 class="lesson-h" id="reharm">How To Reharm Songs &mdash; The Shared Notes Principle</h2>
+  <p class="pull-quote">"The Holy Grail of Crazy Gospel Chords"</p>
+  <p class="body-text"><strong>Shared Notes Principle:</strong> <em>the art of borrowing notes &amp; chords from other keys to use in service of the melody in a song.</em></p>
+  <h3 class="sub-h">Key Rules</h3>
+  <ul class="plain">
     <li>Any chord borrowed from another key <strong>must contain the melody note</strong> &mdash; either as a basic chord tone (1-3-5-7) or as an available tension (9-11-13), including flatted/sharped versions.</li>
     <li>Review Chords, tensions, and Common Progressions (Module 1, Lessons 6&ndash;8) before attempting this.</li>
     <li>Always keep the melody note as the <strong>top note</strong> of every chord to start &mdash; this speeds up applying the Shared Notes Principle.</li>
-</ul>
-<p><em>Next lesson covers not just </em>what<em> to play, but </em>how<em> to play it for full effect.</em></p>
+  </ul>
+  <p class="body-text"><em style="color:var(--muted)">Next lesson covers not just <strong>what</strong> to play, but <strong>how</strong> to play it for full effect.</em></p>
 
-<hr>
+  <hr class="div">
 
-<h3 id="modes">How To Use Modes &amp; Modal Interchange</h3>
-<p>Understanding modes requires understanding: the Number System, Diatonic Chords, and the Major Scale.</p>
-<p>If you're in the key of C, playing "in a mode" simply means playing the C major scale starting on a different scale degree.</p>
+  <h2 class="lesson-h" id="modes">How To Use Modes &amp; Modal Interchange</h2>
+  <p class="body-text">Understanding modes requires understanding: the Number System, Diatonic Chords, and the Major Scale.</p>
+  <p class="body-text">If you're in the key of C, playing "in a mode" simply means playing the C major scale starting on a different scale degree.</p>
 
-<p><strong>The Seven Modes</strong></p>
-<table>
+  <h3 class="sub-h">The Seven Modes</h3>
+  <div class="table-wrap"><table>
     <tr><th>Mode</th><th>Starts on</th><th>Number Formula</th><th>Notes (from C)</th></tr>
     <tr><td>Ionian</td><td>1st note</td><td>1-2-3-4-5-6-7-8</td><td>C D E F G A B C</td></tr>
     <tr><td>Dorian</td><td>2nd note</td><td>1-2-&flat;3-4-5-6-&flat;7-8</td><td>D E F G A B C D</td></tr>
@@ -484,10 +555,10 @@ III dim7</code></pre>
     <tr><td>Mixolydian</td><td>5th note</td><td>1-2-3-4-5-6-&flat;7-8</td><td>G A B C D E F G</td></tr>
     <tr><td>Aeolian</td><td>6th note</td><td>1-2-&flat;3-4-5-&flat;6-&flat;7-8</td><td>A B C D E F G A</td></tr>
     <tr><td>Locrian</td><td>7th note</td><td>1-&flat;2-&flat;3-4-&flat;5-&flat;6-&flat;7-8</td><td>B C D E F G A B</td></tr>
-</table>
+  </table></div>
 
-<p><strong>Diatonic Chords (for reference, C Major)</strong></p>
-<table>
+  <h3 class="sub-h">Diatonic Chords (for reference, C Major)</h3>
+  <div class="table-wrap"><table>
     <tr><th>Chord</th><th>Notes</th><th>Mode</th></tr>
     <tr><td>C (I maj7)</td><td>C - E - G - B</td><td>Ionian</td></tr>
     <tr><td>D (II min7)</td><td>D - F - A - C</td><td>Dorian</td></tr>
@@ -496,74 +567,99 @@ III dim7</code></pre>
     <tr><td>G (V dom7)</td><td>G - B - D - F</td><td>Mixolydian</td></tr>
     <tr><td>A (VI min7)</td><td>A - C - E - G</td><td>Aeolian</td></tr>
     <tr><td>B (VII min7&flat;5)</td><td>B - D - F - A</td><td>Locrian</td></tr>
-</table>
-<p><em>(Practice all examples in every key.)</em></p>
+  </table></div>
+  <p class="body-text"><em style="color:var(--muted)">(Practice all examples in every key.)</em></p>
 
-<hr>
+  <!-- PHASE 6 -->
+  <div class="phase-marker" id="phase-6"><small>Phase 6</small>Passing Movements</div>
 
-<h2 id="phase-6">PHASE 6</h2>
+  <h2 class="lesson-h" id="passing-bass">Common Passing Chord Bass Movements</h2>
+  <p class="body-text">Certain bass movements recur constantly in gospel music &mdash; the <strong>chord types/stacks used over them can vary, but the bass movement stays constant</strong>. Any of the movements below can be used with <strong>any</strong> Chord Stack category, as long as you honor the <strong>MCR formula</strong> and always consider the song's melody.</p>
 
-<h3 id="passing-bass">Common Passing Chord Bass Movements</h3>
-<p>Certain bass movements recur constantly in gospel music &mdash; the <strong>chord types/stacks used over them can vary, but the bass movement stays constant</strong>. Any of the movements below can be used with <strong>any</strong> Chord Stack category, as long as you honor the <strong>MCR formula</strong> and always consider the song's melody.</p>
-
-<p><strong>List of Common Passing Chord Bass Movements</strong></p>
-<ol>
+  <h3 class="sub-h">List of Common Passing Chord Bass Movements</h3>
+  <ol class="plain">
     <li>&flat;5 &ndash; 4 &ndash; 3</li>
     <li>&flat;5 &ndash; 7 &ndash; 3</li>
     <li>&flat;7 &ndash; 6 &ndash; &flat;6 &ndash; 5</li>
-    <li>5 &ndash; 1 &ndash; 4 <em>(or 5 &ndash; &flat;5 &ndash; 4, also the sub-dominant version)</em></li>
+    <li>5 &ndash; 1 &ndash; 4 <em style="color:var(--muted)">(or 5 &ndash; &flat;5 &ndash; 4, also the sub-dominant version)</em></li>
     <li>6 &ndash; 2 &ndash; 5 &ndash; 1 &ndash; 4</li>
     <li>3 &ndash; &flat;3 &ndash; 2</li>
-    <li>4 &ndash; 3 &ndash; 2 / 1 &ndash; 7 &ndash; 6 / &flat;7 &ndash; 6 &ndash; 5 <em>(usually used approaching minor chords &mdash; but be creative; if it sounds good, it's fine)</em></li>
-</ol>
-<blockquote>
-    <em>Remember: you can use ANY Chord Stack category over these bass movements, as long as you honor the MCR formula and the melody of the song you're playing.</em>
-</blockquote>
+    <li>4 &ndash; 3 &ndash; 2 / 1 &ndash; 7 &ndash; 6 / &flat;7 &ndash; 6 &ndash; 5 <em style="color:var(--muted)">(usually used approaching minor chords &mdash; but be creative; if it sounds good, it's fine)</em></li>
+  </ol>
+  <p class="pull-quote">Remember: you can use ANY Chord Stack category over these bass movements, as long as you honor the MCR formula and the melody of the song you're playing.</p>
 
-<hr>
+  <hr class="div">
 
-<h3 id="passing-stack">Chord Stack Passing Movements</h3>
-<p>Similar principle to the above: bass movements recur regardless of the specific chord stack used over them. All movements below work with any Chord Stack category &mdash; honor the <strong>MCR formula</strong> and always factor in the melody.</p>
+  <h2 class="lesson-h" id="passing-stack">Chord Stack Passing Movements</h2>
+  <p class="body-text">Similar principle to the above: bass movements recur regardless of the specific chord stack used over them. All movements below work with any Chord Stack category &mdash; honor the <strong>MCR formula</strong> and always factor in the melody.</p>
 
-<p><strong>Churchy Chord Stacks</strong></p>
-<ul>
+  <h3 class="sub-h">Churchy Chord Stacks</h3>
+  <ul class="plain">
     <li>1 - 2 - &sharp;2 - 3</li>
     <li>1 - &flat;2 - 2 - &flat;3 - 3</li>
     <li>1 - &flat;7 - 6 - &flat;6 - 5</li>
     <li>4 - &sharp;4 - 5</li>
-</ul>
+  </ul>
 
-<p><strong>Inversions Climb</strong></p>
-<ul>
+  <h3 class="sub-h">Inversions Climb</h3>
+  <ul class="plain">
     <li>I major &rarr; II minor &rarr; VII major inversions, over secondary dominants and ii-V-i's / VII-III-VI's, etc.</li>
-</ul>
+  </ul>
 
-<p><strong>Contemporary Chord Stacks (Micro Resolutions)</strong></p>
-<ul>
+  <h3 class="sub-h">Contemporary Chord Stacks (Micro Resolutions)</h3>
+  <ul class="plain">
     <li>Suspended chords &rarr; Dominant (&flat;9) &rarr; Minor chords</li>
-</ul>
+  </ul>
 
-<p><strong>Worship / CCM Maj add2 Chords</strong></p>
-<ul>
+  <h3 class="sub-h">Worship / CCM Maj add2 Chords</h3>
+  <ul class="plain">
     <li>6 - 7 - 1</li>
     <li>7 - 1 - 3 - 4/5</li>
     <li>6 - 7 - &flat;2 - 2</li>
-</ul>
+  </ul>
 
-<p><strong>Classical / Traditional Chord Stack Walkdowns</strong></p>
-<ul>
+  <h3 class="sub-h">Classical / Traditional Chord Stack Walkdowns</h3>
+  <ul class="plain">
     <li>&flat;6 - &flat;5 - 3 - 6</li>
     <li>1 - 7 - 6</li>
     <li>I maj - II min6 - I/3</li>
     <li>I major - IV min6 - I/3</li>
     <li>I major - II Major triad/1 - IV min6/1 - 1</li>
-</ul>
-<p><em>(Refer to the original lesson video for full application examples.)</em></p>
-
-<hr>
-<p><em>End of transcription. Source: Gospel University, The Brathwaite Organization, Inc. (2016&ndash;2023).</em></p>
+  </ul>
+  <p class="body-text"><em style="color:var(--muted)">(Refer to the original lesson video for full application examples.)</em></p>
 
 </div>
+
+<footer>
+  <div class="brand">Ukubona</div>
+  <div class="ts">Source: Gospel University, The Brathwaite Organization, Inc. (2016&ndash;2023)<br>Transcription formatted &middot; okubonabona</div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-btn');
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'dark' ? 'light' : 'dark';
+  }
+  apply(root.getAttribute('data-theme') || 'dark');
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next);
+  });
+
+  var fill = document.getElementById('rail-fill');
+  function onScroll(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+    fill.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
 </body>
 </html>
- 
